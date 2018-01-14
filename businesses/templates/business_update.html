@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action= "{% url 'business_update' post_id=item.id %}" method="POST">
+	{% csrf_token %}
+	{{form|crispy}}
+
+		<input type="submit" value="Update" class="btn btn-outline-dark">
+
+</form>
+
+{% endblock content%}

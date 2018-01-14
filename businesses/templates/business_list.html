@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+{{objects}}
+
+<ul> 
+	{% for wow in objects %}
+
+		<li> {{wow.name}} - {{wow.description}} </li>
+
+	{% endfor%} 
+</ul>
+</body>
+</html>
