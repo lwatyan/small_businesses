@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action= "{% url 'business_update' post_id=item.id %}" method="POST">
+<form action= "{% url 'business_update' post_id=item.id %}" method="POST" method="POST" enctype="multipart/form-data">
 	{% csrf_token %}
 	{{form|crispy}}
 

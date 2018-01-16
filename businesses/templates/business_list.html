@@ -4,12 +4,16 @@
 	<title></title>
 </head>
 <body>
-{{objects}}
+
 
 <ul> 
 	{% for wow in objects %}
 
 		<li> {{wow.name}} - {{wow.description}} </li>
+
+	{% if wow.logo %}
+                <img class= "card-img-top" src="{{wow.logo.url}}" alt="Post image">
+            {% endif %}
 
 	{% endfor%} 
 </ul>

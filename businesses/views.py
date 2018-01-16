@@ -36,7 +36,7 @@ def business_detail(request,business_id):
 
 
 def business_create(request):
-	form = BusinessForm(request.POST or None)
+	form = BusinessForm(request.POST or None, request.FILES or None)
 	if form.is_valid():
 		form.save()
 
@@ -54,12 +54,12 @@ def business_update(request,business_id):
 	form = PostForm(instance = item)
 	if request.method == "POST":
 
-		form = PostForm(request.POST or None, instance = item)
+		form = PostForm(request.POST or None, request.FILES or None, instance = item)
 
 		
 		if form.is_valid():
 			form.save()
-			return redirect("business_list")
+			return redirect("business_detail", business_id= item.id)
 
 	context = {
 
